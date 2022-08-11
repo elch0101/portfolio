@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Montserrat:wght@400;600;700&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  font-size: 24px;
+}
+
+section {
+  padding: 64px;
+}
+
+/* Text */
+h1.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+}
+
+h2.title {
+  font-family: "Lora", serif;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+h3.title {
+  font-family: "Lora", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: -0.01em;
+}
+
+p.body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+#strong {
+  font-weight: 700;
+}
+
+.left-body {
+  text-align: left;
+}
+
+.small {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.job-title {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.employer {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.date {
+  font-family: "Lora", serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #f44d5f;
+  text-align: left;
+}
+
+a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #f44d5f;
+}
+
+/* Buttons */
+
+.btn {
+  padding: 16px;
+  border: none;
+  --bs-btn-hover-border: none;
+  --bs-btn-active-border: none;
+  --bs-btn-focus-shadow-rgb: rgb(0, 0, 0);
+  --bs-btn-hover-bg: inherit;
+}
+
+/* Nav & Pills */
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #f44d5f;
+  padding: 8px 0;
+}
+
+.nav-link {
+  color: #fff;
+  margin: 0 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: -0.01em;
+}
+
+.nav-link:hover {
+  color: #f44d5f;
+}
+
+.dropdown-item:hover {
+  background-color: #f44d5f;
+  color: #fff;
+}
+
+/* Progress Bar */
+
+.progress {
+  background-color: #ffffff66;
+  border-radius: 100px;
+  height: 4px;
+}
+
+.progress-bar {
+  background-color: #fff;
+  border-radius: 100px;
+  width: 100%;
+}
+
+/* Colors */
+
+.transparent {
+  color: #ffffff66;
+}
+
+.dark {
+  color: #2f4858;
+}
+
+/* Icons */
+.icons {
+  margin: 0 8px;
+}
+
+/* First Section - Landing */
+
+#first {
+  background-color: #2f4858;
+  color: white;
+  text-align: center;
+}
+
+.title-icons {
+  margin: 8px 16px;
+  color: white;
+}
+
+.title-icons:hover {
+  color: #f44d5f;
+}
+
+/* Second Section - PM*/
+
+#second {
+  color: #2f4858;
+}
+
+.pro {
+  color: #f44d5f;
+}
+
+/* Third Section - Experience*/
+
+#third {
+  color: #2f4858;
+}
+
+.btn-primary {
+  color: #f44d5f;
+  background-color: white;
+  --bs-btn-hover-color: #f44d5f;
+}
+
+.btn-primary:hover {
+  background-color: #f44d5f;
+  color: white;
+}
+
+/* Fourth Section */
+
+#fourth {
+  background-color: #2f4858;
+  color: white;
+}
+
+.btn-secondary {
+  color: white;
+  background-color: #2f4858;
+  --bs-btn-hover-color: #fff;
+}
+
+.btn-secondary:hover {
+  color: #f44d5f;
+  background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 32px;
+  }
+
+  h1.title {
+    font-size: 2rem;
+  }
+
+  h2.title {
+    font-size: 1.5rem;
+  }
+
+  h3.title {
+    font-size: 24px;
+  }
+
+  p.body {
+    font-size: 13px;
+  }
+
+  #strong {
+    font-weight: 700;
+  }
+
+  .left-body {
+    text-align: left;
+  }
+
+  .small {
+    font-size: 9px;
+  }
+
+  .job-title {
+    font-size: 16px;
+  }
+
+  .employer {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 8px;
+  }
+
+  .nav-link {
+    padding: 0px 8px;
+    font-size: 12px;
+    margin: 0 4px;
+  }
+}
