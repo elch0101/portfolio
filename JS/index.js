@@ -1,11 +1,11 @@
 const plants= gsap.timeline({defaults: {duration: 3}})
 const progressBar=gsap.timeline({scrollTrigger:{trigger: '#languages', toggleActions: "restart restart none none"},defaults: {duration: 1.5}})
-const timeLine=gsap.timeline({scrollTrigger:{trigger: '.timeLine-container'},defaults: {duration:.75}})
+const timeLine=gsap.timeline({scrollTrigger:{trigger: '.timeLine-container'},defaults: {duration:1}})
 const arrows=gsap.timeline({scrollTrigger:{trigger: '#process', toggleActions: "restart restart none none"}, default: {duration:.5},transformOrigin:"center center"})
-const clock= gsap.timeline({defaults: {duration: .5,transformOrigin:"0%  center", toggleActions: "restart restart none none"}})
+const clock= gsap.timeline({defaults: {duration: .5,transformOrigin:"0%  100%"}})
 
 //Plants
-plants.fromTo('#plant_left',{x: -300}, {x:0, ease: "elastic.out(1, 1)"} )
+plants.fromTo('#plant_left',{x: -300}, {x:0, ease: "elastic.out(1, 1)"}, '<')
 plants.fromTo('#plant_right', {y:300}, {y:0, ease: "elastic.out(1, 1)"}, '<')
 
 //Progress-bars
@@ -36,11 +36,15 @@ arrows.repeat(-1);
 //Clock
 function showTime(){
     var userTime = new Date();
-    var hours=userTime.getHours()-12;
-    var minutes=userTime.getMinutes()+1;    
-    var seconds=userTime.getSeconds()+1;  
+    var hours=userTime.getHours();
+    var minutes=userTime.getMinutes();    
+    var seconds=userTime.getSeconds()+1; 
+    
+    if(hours>12){
+        hours-=12;
+    }
 
-    var hoursTxt = (((360/12)*hours)-90).toString().concat("_cw");
+    var hoursTxt = ((((360/12)*hours)+(30/60)*minutes)-90).toString().concat("_cw");
     var minutesTxt = (((360/60)*minutes)-90).toString().concat("_cw");
     var secondsTxt = (((360/60)*seconds)-90).toString().concat("_cw");
 
