@@ -2,7 +2,7 @@ const plants= gsap.timeline({defaults: {duration: 3}})
 const progressBar=gsap.timeline({scrollTrigger:{trigger: '#languages', toggleActions: "restart restart none none"},defaults: {duration: 1.5}})
 const timeLine=gsap.timeline({scrollTrigger:{trigger: '.timeLine-container'},defaults: {duration:.75}})
 const arrows=gsap.timeline({scrollTrigger:{trigger: '#process', toggleActions: "restart restart none none"}, default: {duration:.5},transformOrigin:"center center"})
-const clock= gsap.timeline({defaults: {duration: .5,transformOrigin:"0%  center"}})
+const clock= gsap.timeline({defaults: {duration: .5,transformOrigin:"0%  center", toggleActions: "restart restart none none"}})
 
 //Plants
 plants.fromTo('#plant_left',{x: -300}, {x:0, ease: "elastic.out(1, 1)"} )
