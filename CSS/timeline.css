@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Montserrat:wght@700&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tl-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 32px 0;
+}
+
+.timeline {
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline .tl-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline .tl-list .tm-list-item {
+  padding: 20px;
+  background: rgba(47, 72, 88, 0.05);
+  color: #2f4858;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.timeline .tl-list .tm-list-item:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .tl-container {
+    padding: 56px 0;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #2f4858;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline .tl-list .tm-list-item {
+    width: 50%;
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .timeline .tl-list .tm-list-item:nth-child(even) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 16px 0 16px 16px;
+  }
+
+  .timeline .tl-list .tm-list-item:nth-child(odd) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 16px 16px 16px;
+  }
+
+  .timeline .tl-list .tm-list-item::after {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #2f4858;
+    border-radius: 50%;
+    top: 0;
+  }
+
+  .timeline .tl-list .tm-list-item:nth-child(even)::after {
+    right: -30px;
+    transform: translate(50%, -50%);
+  }
+
+  .timeline .tl-list .tm-list-item:nth-child(odd)::after {
+    left: -30px;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline .tl-list .tm-list-item:hover::after {
+    background-color: #f44d5f;
+  }
+
+  .date {
+    position: absolute;
+    top: -30px;
+  }
+}
