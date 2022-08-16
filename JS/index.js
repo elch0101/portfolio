@@ -2,17 +2,15 @@ const plants= gsap.timeline({defaults: {duration: 3}})
 
 const progressBar=gsap.timeline({scrollTrigger: {trigger: '#languages', toggleActions: "restart restart none none"}, defaults: {duration: 1.5}})
 
-const timeLine=gsap.timeline({scrollTrigger: {trigger: '.timeLine-container'}, defaults: {duration: 1}})
+const timeLine=gsap.timeline({scrollTrigger: {trigger: '.tl-container'}, defaults: {duration: 1}})
 
 const process=gsap.timeline({scrollTrigger: {trigger: '#process', toggleActions: "restart restart none none"}, default: {duration: 1}, transformOrigin: "center center"})
 
 const clock= gsap.timeline({defaults: {duration: .5, transformOrigin: "0% 50%", ease: "none"}})
 
-// ----- * PLANTS * -----//
+// ----- * PLANT * -----//
 
-plants.fromTo('#background', {scale: 0, transformOrigin: "center center"}, {scale: 1, ease: "power.out", duration: 1.5})
-plants.fromTo('#plant_left', {x: -300}, {x: 0, ease: "elastic.out(1, 1)"}, '<')
-plants.fromTo('#plant_right', {y: 300}, {y: 0, ease: "elastic.out(1, 1)"}, '<')
+plants.fromTo('#plant', {x: 300}, {x: 0, ease: "elastic.out(1, 1)"})
 
 // ----- * PROGRESS-BARS * -----//
 
