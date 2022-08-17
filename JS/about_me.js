@@ -4,7 +4,7 @@ var i;
 var piece = "#piece";
 var j;
 
-for(i=0; i<18; i++){
+for(i=1; i<18; i++){
     j=i.toString();
 
 curtain.to(piece.concat(j),{y:-44})

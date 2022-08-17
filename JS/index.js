@@ -39,18 +39,18 @@ process.repeat(-1);
 // ------- * CLOCK * -----//
 
 function showTime(){
-    let userTime = new Date();
-    let hours = userTime.getHours();
-    let minutes = userTime.getMinutes();    
-    let seconds = userTime.getSeconds()+1; 
+    var userTime = new Date();
+    var hours = userTime.getHours();
+    var minutes = userTime.getMinutes();    
+    var seconds = userTime.getSeconds()+1; 
     
     if(hours>12){
         hours-=12;
     }
 
-    let hoursTxt = ((((360/12)*hours)+(30/60)*minutes)-90).toString().concat("_cw");
-    let minutesTxt = (((360/60)*minutes)-90).toString().concat("_cw");
-    let secondsTxt = (((360/60)*seconds)-90).toString().concat("_cw");
+    var hoursTxt = ((((360/12)*hours)+(30/60)*minutes)-90).toString().concat("_cw");
+    var minutesTxt = (((360/60)*minutes)-90).toString().concat("_cw");
+    var secondsTxt = (((360/60)*seconds)-90).toString().concat("_cw");
 
     clock.to('#hours', {rotation: hoursTxt})
     clock.to('#minutes', {rotation: minutesTxt}, '<')
