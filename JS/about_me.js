@@ -1,4 +1,4 @@
-const curtain = gsap.timeline({defaults:{duration:.1, ease: "none"}})
+const curtain = gsap.timeline({defaults:{duration:.13, ease: "none"}})
 
 var i;
 var piece = "#piece";
