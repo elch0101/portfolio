@@ -18,10 +18,10 @@ progressBar.fromTo('.progress-bar', {x: -186}, {x: 0, ease: "power1.in"})
 
 // ----- * TIMELINE * -----//
 
-timeLine.fromTo('#ex1', {opacity: 0}, {opacity: 1})
-timeLine.fromTo('#ex2', {opacity: 0}, {opacity: 1})
-timeLine.fromTo('#ex3', {opacity: 0}, {opacity: 1})
-timeLine.fromTo('#ex4', {opacity: 0}, {opacity: 1})
+timeLine.fromTo('#ex1', {opacity: 0, y: 50}, {opacity: 1, y: 0})
+timeLine.fromTo('#ex2', {opacity: 0, y: 50}, {opacity: 1, y: 0})
+timeLine.fromTo('#ex3', {opacity: 0, y: 50}, {opacity: 1, y: 0})
+timeLine.fromTo('#ex4', {opacity: 0, y: 50}, {opacity: 1, y: 0})
 
 // ----- * PROCESS * -----//
 process.to('#arrow1', {x: 10, ease: "power1.in"})
