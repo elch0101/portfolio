@@ -1,6 +1,6 @@
 const plants= gsap.timeline({defaults: {duration: 3}})
 
-const progressBar=gsap.timeline({scrollTrigger: {trigger: '#languages', toggleActions: "restart restart none none"}, defaults: {duration: 1.5}})
+const progressBar=gsap.timeline({scrollTrigger: {trigger: '#languages', toggleActions: "play none none reset"}, defaults: {duration: 1.5}})
 
 const timeLine=gsap.timeline({defaults: {duration: 10}})
 
@@ -14,7 +14,8 @@ plants.fromTo('#plant', {x: 300}, {x: 0, ease: "elastic.out(1, 1)"})
 
 // ----- * PROGRESS-BARS * -----//
 
-progressBar.fromTo('.progress-bar', {x: -186}, {x: 0, ease: "power1.in"})
+progressBar.to('#spanish', {width: "100%"})
+progressBar.to('#english', {width: "90%"},'<')
 
 // ----- * TIMELINE * -----//
 
