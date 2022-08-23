@@ -33,6 +33,7 @@
   color: #2f4858;
   border-radius: 10px;
   margin-bottom: 20px;
+  opacity: 0;
 }
 
 .timeline .tl-list .tm-list-item:last-child {

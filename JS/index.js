@@ -2,7 +2,7 @@ const plants= gsap.timeline({defaults: {duration: 3}})
 
 const progressBar=gsap.timeline({scrollTrigger: {trigger: '#languages', toggleActions: "restart restart none none"}, defaults: {duration: 1.5}})
 
-const timeLine=gsap.timeline({scrollTrigger: {trigger: '.tl-container'}, defaults: {duration: 1}})
+const timeLine=gsap.timeline({defaults: {duration: 10}})
 
 const process=gsap.timeline({scrollTrigger: {trigger: '#process', toggleActions: "restart restart none none"}, default: {duration: 1}, transformOrigin: "center center"})
 
@@ -18,10 +18,10 @@ progressBar.fromTo('.progress-bar', {x: -186}, {x: 0, ease: "power1.in"})
 
 // ----- * TIMELINE * -----//
 
-timeLine.fromTo('#ex1', {opacity: 0, y: 50}, {opacity: 1, y: 0})
-timeLine.fromTo('#ex2', {opacity: 0, y: 50}, {opacity: 1, y: 0})
-timeLine.fromTo('#ex3', {opacity: 0, y: 50}, {opacity: 1, y: 0})
-timeLine.fromTo('#ex4', {opacity: 0, y: 50}, {opacity: 1, y: 0})
+ timeLine.to('#ex1', {scrollTrigger:{trigger: '#ex1', start: "top center", end:"center center", scrub:true}, opacity: 1})
+ timeLine.to('#ex2', {scrollTrigger:{trigger: '#ex2', start: "top center", end:"center center", scrub:true}, opacity: 1})
+ timeLine.to('#ex3', {scrollTrigger:{trigger: '#ex3', start: "top center", end:"center center", scrub:true}, opacity: 1})
+ timeLine.to('#ex4', {scrollTrigger:{trigger: '#ex4', start: "top center", end:"center center", scrub:true}, opacity: 1})
 
 // ----- * PROCESS * -----//
 process.to('#arrow1', {x: 10, ease: "power1.in"})
