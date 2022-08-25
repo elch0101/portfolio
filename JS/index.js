@@ -14,8 +14,8 @@ plants.fromTo('#plant', {x: 300}, {x: 0, ease: "elastic.out(1, 1)"})
 
 // ----- * PROGRESS-BARS * -----//
 
-progressBar.to('#spanish', {width: "100%"})
-progressBar.to('#english', {width: "100%"},'<')
+progressBar.to('#progress', {width: "100%"})
+
 
 // ----- * TIMELINE * -----//
 

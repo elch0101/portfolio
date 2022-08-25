@@ -10,6 +10,7 @@ body {
   margin: 0;
   background-color: white;
   font-size: 24px;
+  font-family: "Ubuntu", "san-serif";
 }
 
 section {
@@ -149,12 +150,13 @@ a:hover {
 .progress {
   background-color: #ffffff66;
   border-radius: 100px;
-  height: 4px;
+  height: auto;
 }
 
 .progress-bar {
   background-color: #fff;
   border-radius: 100px;
+  color: #2f4858;
 }
 
 /* Colors */
