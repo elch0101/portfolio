@@ -42,7 +42,7 @@ h3.title {
   letter-spacing: -0.01em;
 }
 
-p.body {
+.body {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -56,6 +56,10 @@ p.body {
 }
 
 .left-body {
+  text-align: left;
+}
+
+.skills {
   text-align: left;
 }
 
@@ -259,19 +263,19 @@ a.lnk:hover {
   }
 
   h1.title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   h2.title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   h3.title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
-  p.body {
-    font-size: 13px;
+  .body {
+    font-size: 1rem;
   }
 
   #strong {
@@ -280,6 +284,10 @@ a.lnk:hover {
 
   .left-body {
     text-align: left;
+  }
+
+  .skills {
+    text-align: center;
   }
 
   .small {
@@ -292,6 +300,7 @@ a.lnk:hover {
 
   .employer {
     font-size: 20px;
+    text-decoration: underline;
   }
 
   .btn {
