@@ -118,6 +118,10 @@ a.lnk:hover {
   text-decoration: underline;
 }
 
+.underline {
+  text-decoration: none;
+}
+
 /* Buttons */
 
 .btn {
@@ -300,6 +304,9 @@ a.lnk:hover {
 
   .employer {
     font-size: 20px;
+  }
+
+  .underline {
     text-decoration: underline;
   }
 
