@@ -2,9 +2,11 @@
 const curtain = gsap.timeline({defaults:{duration:.13, ease: "none"}})
 const cat = gsap.timeline({scrollTrigger: {trigger: '#paw', start: "bottom 80%"}, defaults:{duration:.5, ease: "none", transformOrigin: "50%% 50%"}})
 
+
 var i;
 var piece = "#piece";
 var j;
+var star = "#Star";
 
 for(i=1; i<18; i++){
     j=i.toString();
@@ -21,8 +23,6 @@ dt1 = new Date("July 31, 2020");
 dt2 = new Date();
 document.getElementById("years").innerHTML = diff_years(dt1, dt2)+"+";
 
-
-
 function diff_years(dt2, dt1) 
  {
 
@@ -31,3 +31,15 @@ function diff_years(dt2, dt1)
   return Math.abs(Math.round(diff/365.25));
    
  }
+
+
+ function showStars(){
+    var random = Math.round(Math.random() * (17 - 1) + 1);
+
+    curtain.to(star.concat(random),{opacity:1, scale:3, duration:1})
+    curtain.to(star.concat(random),{scale:1, duration:1.5})
+    
+    setTimeout(showStars, 2500);
+}
+
+showStars();
