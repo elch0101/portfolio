@@ -21,7 +21,9 @@ cat.repeat(1);
 
 dt1 = new Date("July 31, 2020");
 dt2 = new Date();
-document.getElementById("years").innerHTML = diff_years(dt1, dt2)+"+";
+document.querySelectorAll('.years').forEach(function(element) {
+    element.innerHTML = diff_years(dt1, dt2)+"+";
+  });
 
 function diff_years(dt2, dt1) 
  {
@@ -33,13 +35,40 @@ function diff_years(dt2, dt1)
  }
 
 
- function showStars(){
-    var random = Math.round(Math.random() * (17 - 1) + 1);
+// Select all the stars in the SVG
+var stars = document.querySelectorAll('#Star');
 
-    curtain.to(star.concat(random),{opacity:1, scale:3, duration:1})
-    curtain.to(star.concat(random),{scale:1, duration:1.5})
-    
-    setTimeout(showStars, 2500);
+// Create an array to store the indices of the stars that have already shimmered
+var shimmeredStars = [];
+
+// Function to shimmer a random star
+function shimmerRandomStar() {
+  // Choose a random star that has not yet shimmered
+  var star;
+  do {
+    var randomIndex = Math.floor(Math.random() * stars.length);
+    star = stars[randomIndex];
+  } while (shimmeredStars.includes(randomIndex));
+  
+  // Add the index of the chosen star to the shimmeredStars array
+  shimmeredStars.push(randomIndex);
+  
+  // Use GSAP to animate the shimmer effect
+  TweenMax.to(star, 0.5, {
+    scale: 2,
+    repeat: 1,
+    yoyo: true,
+    onComplete: function() {
+      // Reset the scale of the star when the animation is complete
+      star.style.transform = 'scale(1)';
+      
+      // If all the stars have shimmered, reset the shimmeredStars array
+      if (shimmeredStars.length === stars.length) {
+        shimmeredStars = [];
+      }
+    }
+  });
 }
 
-showStars();
+// Call the shimmerRandomStar function every 2 seconds
+setInterval(shimmerRandomStar, 2000);
