@@ -12,6 +12,10 @@ body {
   font-size: 24px;
   font-family: "Ubuntu", "san-serif";
 }
+.body-size{
+padding: 0%;
+
+}
 
 section {
   padding: 64px;
@@ -78,6 +82,16 @@ h3.title {
   line-height: 26px;
   letter-spacing: -0.01em;
   text-align: left;
+}
+.job-date {
+  font-family: "Lora", serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 8px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  top: -30px;
+  color: #f44d5f;
 }
 
 .employer {

@@ -6,7 +6,6 @@ const cat = gsap.timeline({scrollTrigger: {trigger: '#paw', start: "bottom 80%"}
 var i;
 var piece = "#piece";
 var j;
-var star = "#Star";
 
 for(i=1; i<18; i++){
     j=i.toString();
@@ -34,41 +33,3 @@ function diff_years(dt2, dt1)
    
  }
 
-
-// Select all the stars in the SVG
-var stars = document.querySelectorAll('#Star');
-
-// Create an array to store the indices of the stars that have already shimmered
-var shimmeredStars = [];
-
-// Function to shimmer a random star
-function shimmerRandomStar() {
-  // Choose a random star that has not yet shimmered
-  var star;
-  do {
-    var randomIndex = Math.floor(Math.random() * stars.length);
-    star = stars[randomIndex];
-  } while (shimmeredStars.includes(randomIndex));
-  
-  // Add the index of the chosen star to the shimmeredStars array
-  shimmeredStars.push(randomIndex);
-  
-  // Use GSAP to animate the shimmer effect
-  TweenMax.to(star, 0.5, {
-    scale: 2,
-    repeat: 1,
-    yoyo: true,
-    onComplete: function() {
-      // Reset the scale of the star when the animation is complete
-      star.style.transform = 'scale(1)';
-      
-      // If all the stars have shimmered, reset the shimmeredStars array
-      if (shimmeredStars.length === stars.length) {
-        shimmeredStars = [];
-      }
-    }
-  });
-}
-
-// Call the shimmerRandomStar function every 2 seconds
-setInterval(shimmerRandomStar, 2000);

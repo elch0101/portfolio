@@ -78,20 +78,21 @@
   .timeline .tl-list .tm-list-item::after {
     content: "";
     position: absolute;
-    height: 20px;
-    width: 20px;
+    height: 21px;
+    width: 21px;
     background-color: #2f4858;
     border-radius: 50%;
     top: 0;
-  }
 
+  }
+  
   .timeline .tl-list .tm-list-item:nth-child(even)::after {
     right: -30px;
     transform: translate(50%, -50%);
   }
 
   .timeline .tl-list .tm-list-item:nth-child(odd)::after {
-    left: -30px;
+    left: -31px;
     transform: translate(-50%, -50%);
   }
 
@@ -103,4 +104,5 @@
     position: absolute;
     top: -30px;
   }
+
 }
