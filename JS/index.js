@@ -8,6 +8,8 @@ const process=gsap.timeline({scrollTrigger: {trigger: '#process', toggleActions:
 
 const clock= gsap.timeline({defaults: {duration: .5, transformOrigin: "0% 50%", ease: "none"}})
 
+const down = gsap.timeline({defaults: {duration: 1, yoyo: true, repeat: -1}});
+
 // ----- * PLANT * -----//
 
 plants.fromTo('#plant', {x: 300}, {x: 0, ease: "elastic.out(1, 1)"})
@@ -64,5 +66,7 @@ showTime();
 
 
 
+// ------- * DOWN ICON * -----//
 
+down.fromTo('#Down', {y: -5}, {y: 5, ease: "sine.inOut"});
 

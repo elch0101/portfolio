@@ -215,6 +215,7 @@ a.lnk:hover {
   background-color: #2f4858;
   color: white;
   text-align: center;
+  height: 100vh;
 }
 
 .title-icons {
@@ -269,6 +270,10 @@ a.lnk:hover {
 .btn-secondary:hover {
   color: #f44d5f;
   background-color: white;
+}
+
+.down-icon{
+  padding-top: 90px;
 }
 
 @media only screen and (max-width: 768px) {
