@@ -282,6 +282,12 @@ a.lnk:hover {
   padding-top: 90px;
 }
 
+.custom-size-icon {
+  font-size: 72px;
+  width: 72px;
+  height: 72px;
+}
+
 @media only screen and (max-width: 768px) {
   body {
     font-size: 16px;
@@ -343,5 +349,10 @@ a.lnk:hover {
     padding: 0px 8px;
     font-size: 12px;
     margin: 0 4px;
+  }
+  .custom-size-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
   }
 }
