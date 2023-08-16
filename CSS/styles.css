@@ -280,6 +280,7 @@ a.lnk:hover {
 
 .down-icon{
   padding-top: 90px;
+
 }
 
 .custom-size-icon {
@@ -351,8 +352,8 @@ a.lnk:hover {
     margin: 0 4px;
   }
   .custom-size-icon {
-    font-size: 40px;
-    width: 40px;
-    height: 40px;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
   }
 }
