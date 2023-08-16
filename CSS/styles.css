@@ -351,9 +351,9 @@ a.lnk:hover {
     font-size: 12px;
     margin: 0 4px;
   }
-  /* .custom-size-icon {
-    font-size: 32px;
-    width: 32px;
-    height: 32px;
-  } */
+  .custom-size-icon {
+    font-size: 56px;
+    width: 56px;
+    height: 56px;
+  } 
 }
