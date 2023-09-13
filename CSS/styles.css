@@ -12,9 +12,8 @@ body {
   font-size: 24px;
   font-family: "Ubuntu", "san-serif";
 }
-.body-size{
-padding: 0%;
-
+.body-size {
+  padding: 0%;
 }
 
 section {
@@ -202,8 +201,7 @@ a.lnk:hover {
   margin: 0 8px;
 }
 
-
-.skill:hover .icons{
+.skill:hover .icons {
   color: #f44d5f;
   transform: scale(1.25);
 }
@@ -278,9 +276,8 @@ a.lnk:hover {
   background-color: white;
 }
 
-.down-icon{
+.down-icon {
   padding-top: 90px;
-
 }
 
 .custom-size-icon {
@@ -289,11 +286,21 @@ a.lnk:hover {
   height: 72px;
 }
 
-.description{
+.description {
   height: 48px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen   
+and (min-device-width : 768px)   
+and (max-device-width : 1440px){
+  #first {
+    height: auto;
+  }
+}
+
+@media only screen
+and (min-device-width : 360px) 
+and (max-device-width: 768px) {
   body {
     font-size: 16px;
   }
@@ -359,5 +366,5 @@ a.lnk:hover {
     font-size: 56px;
     width: 56px;
     height: 56px;
-  } 
+  }
 }
