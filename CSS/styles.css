@@ -287,7 +287,7 @@ a.lnk:hover {
 }
 
 .description {
-  height: 48px;
+ height: auto;
 }
 
 @media only screen   
