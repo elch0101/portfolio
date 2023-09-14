@@ -100,7 +100,7 @@
     background-color: #f44d5f;
   }
 
-  .date {
+  .timeline .date {
     position: absolute;
     top: -30px;
   }

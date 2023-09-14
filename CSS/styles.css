@@ -135,6 +135,11 @@ a.lnk:hover {
   text-decoration: none;
 }
 
+.vertical-center{
+  display: flex;
+  align-items: center;
+}
+
 /* Buttons */
 
 .btn {
