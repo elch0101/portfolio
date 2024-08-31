@@ -64,8 +64,6 @@ function showTime(){
 
 showTime();
 
-
-
 // ------- * DOWN ICON * -----//
 
 down.fromTo('#Down', {y: -5}, {y: 5, ease: "sine.inOut"});
