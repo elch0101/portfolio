@@ -384,7 +384,7 @@ a.lnk:hover {
   width: 100%;
   height: auto; /* Allow height to adjust based on content */
   overflow: hidden; /* Prevent overflow of mentor content */
-  height: 512px;
+  height: 608px;
 }
 
 .mentor-content {

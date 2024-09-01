@@ -53,34 +53,27 @@ function initArrowAnimation() {
   arrowTimeline
     .to("#Arrow1", { y: "-10px" }) // Up
     .to("#Arrow1", { y: "0px" })
-    
 
     .to("#Arrow2", { y: "-10px" }) // Up
     .to("#Arrow2", { y: "0px" })
-    
 
     .to("#Arrow3", { x: "-10px" }) // Left
     .to("#Arrow3", { x: "0px" })
-    
 
     .to("#Arrow4", { x: "-10px" }) // Left
     .to("#Arrow4", { x: "0px" })
-   
 
     .to("#Arrow5", { y: "10px" }) // Down
     .to("#Arrow5", { y: "0px" })
-    
+
     .to("#Arrow6", { y: "10px" }) // Down
     .to("#Arrow6", { y: "0px" })
-    
 
     .to("#Arrow7", { x: "10px" }) // Right
     .to("#Arrow7", { x: "0px" })
-    
 
     .to("#Arrow8", { x: "10px" }) // Right
-    .to("#Arrow8", { x: "0px" })
-    
+    .to("#Arrow8", { x: "0px" });
 }
 
 let confettiActive = false;
