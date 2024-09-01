@@ -329,7 +329,7 @@ a.lnk:hover {
   letter-spacing: 0em;
   text-align: center;
   color: #2f4858;
-  height:  auto;
+  height: auto;
 }
 
 .close {
@@ -352,20 +352,23 @@ a.lnk:hover {
 }
 
 .modal-nav-button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   margin: 0 10px;
-  color: #f44d5f;
+  color: #2f4858;
   background-color: white;
-  --bs-btn-hover-color: #f44d5f;
+  --bs-btn-hover-color: #2f4858;
 }
 
 .modal-nav-button:hover {
-  background-color: #f44d5f;
+  background-color: #2f4858;
   color: white;
 }
 
@@ -415,7 +418,6 @@ a.lnk:hover {
   left: 100%; /* Move out to the right */
   opacity: 0; /* Fade out */
 }
-
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 768px) {
   body {

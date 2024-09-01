@@ -36,7 +36,10 @@ function initGSAPAnimation() {
 
 // GSAP animation for arrow SVGs
 function initArrowAnimation() {
-  const arrowTimeline = gsap.timeline({ repeat: -1, defaults: { duration: 0.3, ease: "power1.inOut" } });
+  const arrowTimeline = gsap.timeline({
+    repeat: -1,
+    defaults: { duration: 0.3, ease: "power1.inOut" },
+  });
 
   arrowTimeline
     .to("#Arrow1", { y: "-10px" }) // Up
@@ -105,9 +108,9 @@ function initKonamiCode() {
 
 function triggerConfetti() {
   confettiActive = true; // Set confetti as active
-  var end = Date.now() + (15 * 1000); // Run for 15 seconds
+  var end = Date.now() + 15 * 1000; // Run for 15 seconds
 
-  var colors = ['#f44d5f', '#ffffff'];
+  var colors = ["#f44d5f", "#ffffff"];
 
   (function frame() {
     if (!confettiActive) return; // Stop confetti if the modal is closed
@@ -117,26 +120,26 @@ function triggerConfetti() {
       angle: 60,
       spread: 100,
       origin: { x: 0 },
-      colors: colors
+      colors: colors,
     });
     confetti({
       particleCount: 2,
       angle: 120,
       spread: 100,
       origin: { x: 1 },
-      colors: colors
+      colors: colors,
     });
 
     if (Date.now() < end) {
       requestAnimationFrame(frame);
     }
-  }());
+  })();
 }
 
 let currentMentorIndex = 1;
-const totalMentors = document.getElementsByClassName('mentor-content').length;
+const totalMentors = document.getElementsByClassName("mentor-content").length;
 
-document.getElementById('openModalButton').onclick = function() {
+document.getElementById("openModalButton").onclick = function () {
   showSpecialMessage();
   setTimeout(() => {
     triggerConfetti(); // Trigger confetti after the delay
@@ -146,126 +149,120 @@ document.getElementById('openModalButton').onclick = function() {
 function showSpecialMessage() {
   currentMentorIndex = 1;
 
-  const modal = document.getElementById('konamiModal');
-  const span = document.getElementsByClassName('close')[0];
-  const backButton = document.getElementById('backButton');
-  const nextButton = document.getElementById('nextButton');
+  const modal = document.getElementById("konamiModal");
+  const span = document.getElementsByClassName("close")[0];
+  const backButton = document.getElementById("backButton");
+  const nextButton = document.getElementById("nextButton");
 
-  modal.style.display = 'block';
+  modal.style.display = "block";
 
   showMentor(currentMentorIndex);
 
-  span.onclick = function() {
-    modal.style.display = 'none';
+  span.onclick = function () {
+    modal.style.display = "none";
     confettiActive = false; // Stop confetti
-  }
+  };
 
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target === modal) {
-      modal.style.display = 'none';
+      modal.style.display = "none";
       confettiActive = false; // Stop confetti
     }
-  }
+  };
 
-  nextButton.onclick = function() {
+  nextButton.onclick = function () {
     if (currentMentorIndex < totalMentors) {
       currentMentorIndex++;
-      slideMentor(currentMentorIndex, 'next');
+      slideMentor(currentMentorIndex, "next");
     }
-  }
+  };
 
-  backButton.onclick = function() {
+  backButton.onclick = function () {
     if (currentMentorIndex > 1) {
       currentMentorIndex--;
-      slideMentor(currentMentorIndex, 'back');
+      slideMentor(currentMentorIndex, "back");
     }
-  }
+  };
 }
 
 function showMentor(index) {
-  const mentors = document.getElementsByClassName('mentor-content');
+  const mentors = document.getElementsByClassName("mentor-content");
   for (let i = 0; i < mentors.length; i++) {
-    mentors[i].classList.remove('active', 'previous', 'next');
-    mentors[i].style.visibility = 'hidden'; // Ensure it's hidden
-    mentors[i].style.transform = 'translateX(100%)'; // Reset position
+    mentors[i].classList.remove("active", "previous", "next");
+    mentors[i].style.visibility = "hidden"; // Ensure it's hidden
+    mentors[i].style.transform = "translateX(100%)"; // Reset position
   }
 
-  mentors[index - 1].classList.add('active');
-  mentors[index - 1].style.visibility = 'visible'; // Ensure it's visible
-  mentors[index - 1].style.transform = 'translateX(0%)'; // Center the active one
+  mentors[index - 1].classList.add("active");
+  mentors[index - 1].style.visibility = "visible"; // Ensure it's visible
+  mentors[index - 1].style.transform = "translateX(0%)"; // Center the active one
 
-  const backButton = document.getElementById('backButton');
-  const nextButton = document.getElementById('nextButton');
+  const backButton = document.getElementById("backButton");
+  const nextButton = document.getElementById("nextButton");
 
   // Show/hide the Back button
   if (index === 1) {
-    backButton.style.display = 'none';
+    backButton.style.display = "none";
   } else {
-    backButton.style.display = 'inline-block';
+    backButton.style.display = "inline-block";
   }
 
   // Show/hide the Next button
   if (index === totalMentors) {
-    nextButton.style.display = 'none';
+    nextButton.style.display = "none";
   } else {
-    nextButton.style.display = 'inline-block';
+    nextButton.style.display = "inline-block";
   }
 }
 
 function slideMentor(index, direction) {
-  const mentors = document.getElementsByClassName('mentor-content');
+  const mentors = document.getElementsByClassName("mentor-content");
   const currentMentor = mentors[index - 1];
-  const previousMentor = mentors[(direction === 'next' ? index - 2 : index)];
+  const previousMentor = mentors[direction === "next" ? index - 2 : index];
 
-  previousMentor.classList.remove('active');
-  currentMentor.classList.remove('previous', 'next');
+  previousMentor.classList.remove("active");
+  currentMentor.classList.remove("previous", "next");
 
   // Set up for the slide animation
-  if (direction === 'next') {
-    currentMentor.style.transform = 'translateX(100%)'; // Start from right
-    currentMentor.style.visibility = 'visible'; // Ensure it's visible before sliding in
+  if (direction === "next") {
+    currentMentor.style.transform = "translateX(100%)"; // Start from right
+    currentMentor.style.visibility = "visible"; // Ensure it's visible before sliding in
     requestAnimationFrame(() => {
-      previousMentor.style.transform = 'translateX(-100%)'; // Slide out to left
-      previousMentor.style.visibility = 'hidden'; // Hide previous mentor after sliding out
-      currentMentor.style.transform = 'translateX(0%)'; // Slide in from right
+      previousMentor.style.transform = "translateX(-100%)"; // Slide out to left
+      previousMentor.style.visibility = "hidden"; // Hide previous mentor after sliding out
+      currentMentor.style.transform = "translateX(0%)"; // Slide in from right
     });
   } else {
-    currentMentor.style.transform = 'translateX(-100%)'; // Start from left
-    currentMentor.style.visibility = 'visible'; // Ensure it's visible before sliding in
+    currentMentor.style.transform = "translateX(-100%)"; // Start from left
+    currentMentor.style.visibility = "visible"; // Ensure it's visible before sliding in
     requestAnimationFrame(() => {
-      previousMentor.style.transform = 'translateX(100%)'; // Slide out to right
-      previousMentor.style.visibility = 'hidden'; // Hide previous mentor after sliding out
-      currentMentor.style.transform = 'translateX(0%)'; // Slide in from left
+      previousMentor.style.transform = "translateX(100%)"; // Slide out to right
+      previousMentor.style.visibility = "hidden"; // Hide previous mentor after sliding out
+      currentMentor.style.transform = "translateX(0%)"; // Slide in from left
     });
   }
 
   requestAnimationFrame(() => {
-    currentMentor.classList.add('active');
-    currentMentor.style.visibility = 'visible'; // Make current mentor visible
+    currentMentor.classList.add("active");
+    currentMentor.style.visibility = "visible"; // Make current mentor visible
 
     // Show/hide the Back button
-    const backButton = document.getElementById('backButton');
-    const nextButton = document.getElementById('nextButton');
+    const backButton = document.getElementById("backButton");
+    const nextButton = document.getElementById("nextButton");
 
     if (index === 1) {
-      backButton.style.display = 'none';
+      backButton.style.display = "none";
     } else {
-      backButton.style.display = 'inline-block';
+      backButton.style.display = "inline-block";
     }
 
     if (index === totalMentors) {
-      nextButton.style.display = 'none';
+      nextButton.style.display = "none";
     } else {
-      nextButton.style.display = 'inline-block';
+      nextButton.style.display = "inline-block";
     }
   });
 }
-
-
-
-
-  
-
 
 // Initialize GSAP animations and Konami code
 initGSAPAnimation();
