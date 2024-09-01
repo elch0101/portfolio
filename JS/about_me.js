@@ -9,25 +9,34 @@ function initGSAPAnimation() {
   var i;
   var piece = "#piece";
   var j;
+  var ropeStartY = -316;
+  var ropeEndY = 0;
+  var totalPieces = 17;
+  var ropeDistance = ropeEndY - ropeStartY;
+  var ropeIncrement = ropeDistance / totalPieces;
 
-  for (i = 1; i < 18; i++) {
+  for (i = 1; i <= totalPieces; i++) {
     j = i.toString();
 
+    // Animate each curtain piece
     curtain.to(piece.concat(j), { y: -44 });
     curtain.to(piece.concat(j), { opacity: 0, duration: 0 });
+
+    // Move the rope incrementally
+    curtain.to("#rope", { y: `+=${ropeIncrement}` }, `-=${0.2}`);
   }
 
-  cat.to("#paw", { rotation: "45deg" });
-  cat.to("#paw", { rotation: "0" });
+  cat.to("#paw", { rotation: 45 });
+  cat.to("#paw", { rotation: 0 });
   cat.repeat(1);
 
-  dt1 = new Date("July 31, 2020");
-  dt2 = new Date();
+  var dt1 = new Date("July 31, 2020");
+  var dt2 = new Date();
   document.querySelectorAll(".years").forEach(function (element) {
     element.innerHTML = diff_years(dt1, dt2) + "+";
   });
 
-  function diff_years(dt2, dt1) {
+  function diff_years(dt1, dt2) {
     var diff = (dt2.getTime() - dt1.getTime()) / 1000;
     diff /= 60 * 60 * 24;
     return Math.abs(Math.round(diff / 365.25));
