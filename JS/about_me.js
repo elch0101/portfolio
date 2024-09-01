@@ -80,6 +80,8 @@ function initArrowAnimation() {
     .to("#Arrow8", { x: "0px" });
 }
 
+let confettiActive = false;
+
 // Konami Code Easter egg
 function initKonamiCode() {
   const konamiCode = [38, 38, 37, 37, 40, 40, 39, 39];
@@ -89,9 +91,11 @@ function initKonamiCode() {
     if (e.keyCode === konamiCode[konamiIndex]) {
       konamiIndex++;
       if (konamiIndex === konamiCode.length) {
-        triggerConfetti();
-        showSpecialMessage();
-        konamiCodePosition = 0;
+        showSpecialMessage(); // Show the modal first
+        setTimeout(() => {
+          triggerConfetti(); // Trigger confetti after the delay
+        }, 500); // Delay in milliseconds (500ms = 0.5 seconds)
+        konamiIndex = 0; // Reset the konamiIndex after successful code entry
       }
     } else {
       konamiIndex = 0;
@@ -99,26 +103,49 @@ function initKonamiCode() {
   });
 }
 
+function triggerConfetti() {
+  confettiActive = true; // Set confetti as active
+  var end = Date.now() + (15 * 1000); // Run for 15 seconds
 
-  function triggerConfetti() {
+  var colors = ['#f44d5f', '#ffffff'];
+
+  (function frame() {
+    if (!confettiActive) return; // Stop confetti if the modal is closed
+
     confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
+      particleCount: 2,
+      angle: 60,
+      spread: 100,
+      origin: { x: 0 },
+      colors: colors
     });
-  }
+    confetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 100,
+      origin: { x: 1 },
+      colors: colors
+    });
 
-  document.getElementById('openModalButton').onclick = function() {
-    showSpecialMessage();
-  };
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
+}
 
-  let currentMentorIndex = 1;
+let currentMentorIndex = 1;
 const totalMentors = document.getElementsByClassName('mentor-content').length;
 
+document.getElementById('openModalButton').onclick = function() {
+  showSpecialMessage();
+  setTimeout(() => {
+    triggerConfetti(); // Trigger confetti after the delay
+  }, 500); // Delay in milliseconds (500ms = 0.5 seconds)
+};
+
 function showSpecialMessage() {
-  // Reset to the first mentor when the modal is opened
   currentMentorIndex = 1;
-  
+
   const modal = document.getElementById('konamiModal');
   const span = document.getElementsByClassName('close')[0];
   const backButton = document.getElementById('backButton');
@@ -126,64 +153,115 @@ function showSpecialMessage() {
 
   modal.style.display = 'block';
 
-  // Show the first mentor's content initially
   showMentor(currentMentorIndex);
 
-  // Close the modal when the close button is clicked
   span.onclick = function() {
     modal.style.display = 'none';
+    confettiActive = false; // Stop confetti
   }
 
-  // Close the modal when clicking outside of it
   window.onclick = function(event) {
     if (event.target === modal) {
       modal.style.display = 'none';
+      confettiActive = false; // Stop confetti
     }
   }
 
-  // Handle the "Next" button click
   nextButton.onclick = function() {
     if (currentMentorIndex < totalMentors) {
       currentMentorIndex++;
-      showMentor(currentMentorIndex);
+      slideMentor(currentMentorIndex, 'next');
     }
   }
 
-  // Handle the "Back" button click
   backButton.onclick = function() {
     if (currentMentorIndex > 1) {
       currentMentorIndex--;
-      showMentor(currentMentorIndex);
+      slideMentor(currentMentorIndex, 'back');
     }
   }
 }
 
 function showMentor(index) {
-  // Hide all mentor content
   const mentors = document.getElementsByClassName('mentor-content');
   for (let i = 0; i < mentors.length; i++) {
-    mentors[i].style.display = 'none';
+    mentors[i].classList.remove('active', 'previous', 'next');
+    mentors[i].style.visibility = 'hidden'; // Ensure it's hidden
+    mentors[i].style.transform = 'translateX(100%)'; // Reset position
   }
 
-  // Show the current mentor's content
-  mentors[index - 1].style.display = 'block';
+  mentors[index - 1].classList.add('active');
+  mentors[index - 1].style.visibility = 'visible'; // Ensure it's visible
+  mentors[index - 1].style.transform = 'translateX(0%)'; // Center the active one
 
-  // Show or hide the back and next buttons
   const backButton = document.getElementById('backButton');
   const nextButton = document.getElementById('nextButton');
 
+  // Show/hide the Back button
   if (index === 1) {
     backButton.style.display = 'none';
   } else {
     backButton.style.display = 'inline-block';
   }
 
+  // Show/hide the Next button
   if (index === totalMentors) {
     nextButton.style.display = 'none';
   } else {
     nextButton.style.display = 'inline-block';
   }
 }
+
+function slideMentor(index, direction) {
+  const mentors = document.getElementsByClassName('mentor-content');
+  const currentMentor = mentors[index - 1];
+  const previousMentor = mentors[(direction === 'next' ? index - 2 : index)];
+
+  previousMentor.classList.remove('active');
+  currentMentor.classList.remove('previous', 'next');
+
+  // Set up for the slide animation
+  if (direction === 'next') {
+    currentMentor.style.transform = 'translateX(100%)'; // Start from right
+    currentMentor.style.visibility = 'visible'; // Ensure it's visible before sliding in
+    requestAnimationFrame(() => {
+      previousMentor.style.transform = 'translateX(-100%)'; // Slide out to left
+      previousMentor.style.visibility = 'hidden'; // Hide previous mentor after sliding out
+      currentMentor.style.transform = 'translateX(0%)'; // Slide in from right
+    });
+  } else {
+    currentMentor.style.transform = 'translateX(-100%)'; // Start from left
+    currentMentor.style.visibility = 'visible'; // Ensure it's visible before sliding in
+    requestAnimationFrame(() => {
+      previousMentor.style.transform = 'translateX(100%)'; // Slide out to right
+      previousMentor.style.visibility = 'hidden'; // Hide previous mentor after sliding out
+      currentMentor.style.transform = 'translateX(0%)'; // Slide in from left
+    });
+  }
+
+  requestAnimationFrame(() => {
+    currentMentor.classList.add('active');
+    currentMentor.style.visibility = 'visible'; // Make current mentor visible
+
+    // Show/hide the Back button
+    const backButton = document.getElementById('backButton');
+    const nextButton = document.getElementById('nextButton');
+
+    if (index === 1) {
+      backButton.style.display = 'none';
+    } else {
+      backButton.style.display = 'inline-block';
+    }
+
+    if (index === totalMentors) {
+      nextButton.style.display = 'none';
+    } else {
+      nextButton.style.display = 'inline-block';
+    }
+  });
+}
+
+
 
 
   

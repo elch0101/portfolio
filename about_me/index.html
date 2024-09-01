@@ -2207,7 +2207,7 @@
                 </g>
               </svg>
               <!-- Debug Button to Open Modal -->
-              <button id="openModalButton" class="nav-button">
+              <button id="openModalButton" class="nav-button" hidden>
                 Open Modal for Debugging
               </button>
             </div>
@@ -2257,96 +2257,98 @@
       </section>
 
       <!-- Modal Structure -->
-      
-
-
       <div id="konamiModal" class="modal" style="display: none">
         <div class="modal-content">
           <span class="close">&times;</span>
           <h3 class="title">Dedicated to My Mentors</h3>
 
           <div id="mentorWrapper" class="mentor-wrapper">
-          <!-- Mentor 1 Content -->
-          <div id="mentor1" class="mentor-content" style="display: none">
-            <p>
-              To
-              <a
-                href="https://www.linkedin.com/in/amy-durocher-adobe/"
-                target="_blank"
-                class="pro"
-                id="strong"
-                >Amy Durocher</a
-              >,
-            </p>
-            <p>
-              I met you through mentorships on ADPList.org. I had a few sessions
-              with other mentors, but none really clicked until I found you. You
-              helped me hone my abilities as a product manager, gave me
-              invaluable tips for continuous growth, and supported me through
-              tough times. I can't express how grateful I am to have found you,
-              and I can't thank you enough for your continued support over the
-              years!
-            </p>
-            <img
-              src="../Images/Mentors/Amy.jpeg"
-              alt="Mentor 1 Photo"
-              class="modal-img"
-            />
+            <!-- Mentor 1 Content -->
+            <div id="mentor1" class="mentor-content">
+              <p>
+                To
+                <a
+                  href="https://www.linkedin.com/in/amy-durocher-adobe/"
+                  target="_blank"
+                  class="pro"
+                  id="strong"
+                  >Amy Durocher</a
+                >,
+              </p>
+              <p>
+                I met you through mentorships on ADPList.org. I had a few
+                sessions with other mentors, but none really clicked until I
+                found you. You helped me hone my abilities as a product manager,
+                gave me invaluable tips for continuous growth, and supported me
+                through tough times. I can't express how grateful I am to have
+                found you, and I can't thank you enough for your continued
+                support over the years!
+              </p>
+              <img
+                src="../Images/Mentors/Amy.jpeg"
+                alt="Mentor 1 Photo"
+                class="modal-img"
+              />
+            </div>
+
+            <!-- Mentor 2 Content -->
+            <div id="mentor2" class="mentor-content">
+              <p>
+                To
+                <a
+                  href="https://www.linkedin.com/in/ben-barnett2/"
+                  target="_blank"
+                  class="pro"
+                  id="strong"
+                  >Ben Barnett</a
+                >,
+              </p>
+              <p>
+                Your guidance and support have been invaluable to me on this
+                journey. Every achievement here is a reflection of your wisdom,
+                patience, and belief in my potential. Thank you for helping me
+                become the person I am today.
+              </p>
+              <img
+                src="../Images/Mentors/Ben.jpeg"
+                alt="Mentor 2 Photo"
+                class="modal-img"
+              />
+            </div>
+
+            <!-- Mentor 3 Content -->
+            <div id="mentor3" class="mentor-content">
+              <p>
+                To
+                <a
+                  href="https://www.linkedin.com/in/grantgumina/"
+                  target="_blank"
+                  class="pro"
+                  id="strong"
+                  >Grant Gumina</a
+                >,
+              </p>
+              <p>
+                Thank you for seeing in me what I couldn’t. Your vision for my
+                rough potential has taught me to never surrender and keep
+                pushing forward. I’m deeply grateful for the way you challenge
+                me, helping me expand my limits, learn new things, and trust in
+                my abilities. Your guidance has been invaluable in shaping who I
+                am today.
+              </p>
+              <img
+                src="../Images/Mentors/Grant.jpeg"
+                alt="Mentor 3 Photo"
+                class="modal-img"
+              />
+            </div>
           </div>
 
-          <!-- Mentor 2 Content -->
-          <div id="mentor2" class="mentor-content" style="display:none;">
-            <p>
-              To
-              <a
-                href="https://www.linkedin.com/in/ben-barnett2/"
-                target="_blank"
-                class="pro"
-                id="strong"
-                >Ben Barnett</a
-              >,
-            </p>
-            <p>
-              Your guidance and support have been invaluable to me on this
-              journey. Every achievement here is a reflection of your wisdom,
-              patience, and belief in my potential. Thank you for helping me
-              become the person I am today.
-            </p>
-            <img
-              src="../Images/Mentors/Ben.jpeg"
-              alt="Mentor 2 Photo"
-              class="modal-img"
-            />
-          </div>
-
-          <!-- Mentor 3 Content -->
-          <div id="mentor3" class="mentor-content" style="display:none;">
-            <p>
-              To
-              <a
-                href="https://www.linkedin.com/in/grantgumina/"
-                target="_blank"
-                class="pro"
-                id="strong"
-                >Grant Gumina</a
-              >,
-            </p>
-            <p>
-              Thank you for seeing in me what I couldn’t. Your vision for my
-              rough potential has taught me to never surrender and keep pushing
-              forward. I’m deeply grateful for the way you challenge me, helping
-              me expand my limits, learn new things, and trust in my abilities.
-              Your guidance has been invaluable in shaping who I am today.
-            </p>
-            <img
-              src="../Images/Mentors/Grant.jpeg"
-              alt="Mentor 3 Photo"
-              class="modal-img"
-            />
-          </div>
-        </div>
-
-          <p>With heartfelt gratitude,<br><span class="pro" id="strong">Elias</span></p>
+          <p>
+            With heartfelt gratitude,<br /><span class="pro" id="strong"
+              >Elias</span
+            >
+          </p>
 
           <!-- Navigation Buttons -->
           <div
@@ -2355,12 +2357,12 @@
           >
             <button
               id="backButton"
-              class="modal-nav-button"
+              class="btn btn-primary"
               style="display: none"
             >
               Back
             </button>
-            <button id="nextButton" class="modal-nav-button">Next</button>
+            <button id="nextButton" class="btn btn-primary">Next</button>
           </div>
         </div>
       </div>
