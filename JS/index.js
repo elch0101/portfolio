@@ -68,3 +68,6 @@ showTime();
 
 down.fromTo('#Down', {y: -5}, {y: 5, ease: "sine.inOut"});
 
+console.log("<<<------------------------------------------------------------------------------------->>>")
+console.log("If you're reading this, you're probably looking for bugs... or just curious. Either way, enjoy peeking around!")
+console.log("<<<------------------------------------------------------------------------------------->>>")
