@@ -89,14 +89,105 @@ function initKonamiCode() {
     if (e.keyCode === konamiCode[konamiIndex]) {
       konamiIndex++;
       if (konamiIndex === konamiCode.length) {
-        alert("You've unlocked the secret!");
-        document.body.style.backgroundColor = "#f0e68c";
+        triggerConfetti();
+        showSpecialMessage();
+        konamiCodePosition = 0;
       }
     } else {
       konamiIndex = 0;
     }
   });
 }
+
+
+  function triggerConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+  }
+
+  document.getElementById('openModalButton').onclick = function() {
+    showSpecialMessage();
+  };
+
+  let currentMentorIndex = 1;
+const totalMentors = document.getElementsByClassName('mentor-content').length;
+
+function showSpecialMessage() {
+  // Reset to the first mentor when the modal is opened
+  currentMentorIndex = 1;
+  
+  const modal = document.getElementById('konamiModal');
+  const span = document.getElementsByClassName('close')[0];
+  const backButton = document.getElementById('backButton');
+  const nextButton = document.getElementById('nextButton');
+
+  modal.style.display = 'block';
+
+  // Show the first mentor's content initially
+  showMentor(currentMentorIndex);
+
+  // Close the modal when the close button is clicked
+  span.onclick = function() {
+    modal.style.display = 'none';
+  }
+
+  // Close the modal when clicking outside of it
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+
+  // Handle the "Next" button click
+  nextButton.onclick = function() {
+    if (currentMentorIndex < totalMentors) {
+      currentMentorIndex++;
+      showMentor(currentMentorIndex);
+    }
+  }
+
+  // Handle the "Back" button click
+  backButton.onclick = function() {
+    if (currentMentorIndex > 1) {
+      currentMentorIndex--;
+      showMentor(currentMentorIndex);
+    }
+  }
+}
+
+function showMentor(index) {
+  // Hide all mentor content
+  const mentors = document.getElementsByClassName('mentor-content');
+  for (let i = 0; i < mentors.length; i++) {
+    mentors[i].style.display = 'none';
+  }
+
+  // Show the current mentor's content
+  mentors[index - 1].style.display = 'block';
+
+  // Show or hide the back and next buttons
+  const backButton = document.getElementById('backButton');
+  const nextButton = document.getElementById('nextButton');
+
+  if (index === 1) {
+    backButton.style.display = 'none';
+  } else {
+    backButton.style.display = 'inline-block';
+  }
+
+  if (index === totalMentors) {
+    nextButton.style.display = 'none';
+  } else {
+    nextButton.style.display = 'inline-block';
+  }
+}
+
+
+  
+
 
 // Initialize GSAP animations and Konami code
 initGSAPAnimation();

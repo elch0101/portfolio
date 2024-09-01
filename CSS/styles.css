@@ -111,7 +111,7 @@ h3.title {
   text-align: left;
 }
 
-a {
+a.url {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -135,7 +135,7 @@ a.lnk:hover {
   text-decoration: none;
 }
 
-.vertical-center{
+.vertical-center {
   display: flex;
   align-items: center;
 }
@@ -292,20 +292,95 @@ a.lnk:hover {
 }
 
 .description {
- height: auto;
+  height: auto;
 }
 
-@media only screen   
-and (min-device-width : 768px)   
-and (max-device-width : 1440px){
+@media only screen and (min-device-width: 768px) and (max-device-width: 1440px) {
   #first {
     height: auto;
   }
 }
 
-@media only screen
-and (min-device-width : 360px) 
-and (max-device-width: 768px) {
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #2f4858;
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  color: #fd828e;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+}
+
+.modal-nav-button {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center;
+  margin-top: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px
+}
+
+.nav-button:last-child {
+  margin-right: 0;
+}
+
+.modal-nav-button:hover {
+  background-color: #45a049;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44d5f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 768px) {
   body {
     font-size: 16px;
   }
