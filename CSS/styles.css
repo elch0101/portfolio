@@ -111,7 +111,7 @@ h3.title {
   text-align: left;
 }
 
-a {
+a.url {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -135,7 +135,7 @@ a.lnk:hover {
   text-decoration: none;
 }
 
-.vertical-center{
+.vertical-center {
   display: flex;
   align-items: center;
 }
@@ -292,20 +292,132 @@ a.lnk:hover {
 }
 
 .description {
- height: auto;
+  height: auto;
 }
 
-@media only screen   
-and (min-device-width : 768px)   
-and (max-device-width : 1440px){
+@media only screen and (min-device-width: 768px) and (max-device-width: 1440px) {
   #first {
     height: auto;
   }
 }
 
-@media only screen
-and (min-device-width : 360px) 
-and (max-device-width: 768px) {
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Allow scrolling if content overflows */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* Reduce margin to allow more vertical space */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh; /* Limit height to fit within viewport */
+  overflow: auto; /* Allow scrolling inside the modal if needed */
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #2f4858;
+  height:  auto;
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  color: #fd828e;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  width: 200px;
+  height: auto; /* Allow height to scale with image aspect ratio */
+  max-height: 300px; /* Ensure image doesn't get too large */
+}
+
+.modal-nav-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+  color: #f44d5f;
+  background-color: white;
+  --bs-btn-hover-color: #f44d5f;
+}
+
+.modal-nav-button:hover {
+  background-color: #f44d5f;
+  color: white;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44d5f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mentor-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto; /* Allow height to adjust based on content */
+  overflow: hidden; /* Prevent overflow of mentor content */
+  height: 512px;
+}
+
+.mentor-content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Hidden from view */
+}
+
+.mentor-content.active {
+  transform: translateX(0%);
+  opacity: 1; /* Visible */
+  visibility: visible; /* Visible */
+}
+
+.mentor-content.previous {
+  transform: translateX(-100%);
+  opacity: 0; /* Hidden */
+  visibility: hidden; /* Hidden from view */
+}
+
+.mentor-content.exit-left {
+  left: -100%; /* Move out to the left */
+  opacity: 0; /* Fade out */
+}
+
+.mentor-content.exit-right {
+  left: 100%; /* Move out to the right */
+  opacity: 0; /* Fade out */
+}
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 768px) {
   body {
     font-size: 16px;
   }
