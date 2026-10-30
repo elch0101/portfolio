@@ -531,6 +531,19 @@
           </div>
         </div>
       </div>
+
+      <div class="resume-outro" data-noprint>
+        ${gridBg('14')}
+        <div class="resume-outro-inner">
+          <div class="resume-outro-text">
+            <div class="resume-outro-title">${accent(c.outroTitle, 'accent', v)}</div>
+            <div class="kicker resume-outro-sub">${esc(c.outroSub)}</div>
+          </div>
+          <button type="button" class="cta" data-print>
+            <span>${esc(c.print)}</span><span class="cta-ring" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
     </div>`;
   }
 

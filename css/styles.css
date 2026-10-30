@@ -481,6 +481,13 @@ h1, h2, h3, p { margin: 0; }
 .resume-bar-label { color: var(--paper-55); }
 .resume-bar .cta { padding: 12px 22px; font-size: 12px; letter-spacing: 0.16em; }
 .resume-bar .cta-ring { width: 18px; height: 18px; }
+.resume-outro { position: relative; background: var(--ink); color: var(--paper); overflow: hidden; }
+.resume-outro-inner { position: relative; max-width: 940px; margin: 0 auto; padding: clamp(48px, 7vw, 80px) var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.resume-outro-text { display: flex; flex-direction: column; gap: 10px; }
+.resume-outro-title { font-size: clamp(28px, 4vw, 44px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+.resume-outro-sub { color: var(--paper-60); }
+.resume-outro .cta { padding: 16px 26px; letter-spacing: 0.16em; }
+.resume-outro .cta-ring { width: 18px; height: 18px; }
 .resume { max-width: 940px; margin: 0 auto; padding: clamp(40px, 6vw, 64px) var(--gutter) clamp(56px, 8vw, 96px); display: flex; flex-direction: column; gap: 44px; }
 .rhead { display: flex; flex-direction: column; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 28px; }
 .rhead-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
