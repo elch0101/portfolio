@@ -119,6 +119,37 @@ global `* { box-sizing: border-box }`; set it per element where the design does.
   so adjacent stripe blocks look like one pattern. Period = 11·√2 px.
 - Analytics: GA4 `G-C14TK36RXS` carried over from the previous site.
 
+## Deploy (Hostinger ← GitHub)
+
+Repo: `github.com/elch0101/portfolio` (default branch `master`). Hosting:
+Hostinger shared, account `u876362435`. Two GitHub push webhooks
+(`webhooks.hostinger.com/deploy/…`) fire on every push; each Hostinger Git
+repo pulls only its own branch:
+
+| branch    | site                          | server directory                                      |
+|-----------|-------------------------------|-------------------------------------------------------|
+| `staging` | staging.iameliascohen.com     | `domains/iameliascohen.com/public_html/staging`       |
+| `master`  | iameliascohen.com             | `domains/iameliascohen.com/public_html`               |
+
+A GitHub-app auto-deployment (branch `staging` → `staging/`) is also enabled,
+redundant with the staging webhook. Pushing a branch = it is live on its site
+within seconds; there is no build step and no manual deploy.
+
+Staging is a subdomain whose root sits inside master's `public_html`, so the
+master `.htaccess` also applies to staging requests (Apache reads parent
+directories' `.htaccess`).
+
+This folder is the git repo (local branch `staging` tracks `origin/staging`).
+`../portfolio` is an old clone of the previous site; don't push from it.
+
+### Push rules
+
+- "push" (also "stgn", "stging", "staging") = commit and push to `staging`. Never to `master`.
+- Everything reaches `master` only through `staging`: merge/fast-forward
+  `staging` → `master`, never commit to `master` directly.
+- Pushing to `master` needs the user's explicit confirmation every time, after
+  they have checked staging.iameliascohen.com. Earlier approval does not carry over.
+
 ## Verify a change
 
 1. `python3 -m http.server 8000` in this folder, open `http://localhost:8000/`.
