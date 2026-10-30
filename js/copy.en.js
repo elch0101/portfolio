@@ -201,11 +201,17 @@ COPY.en = {
     school: 'Universidad Iberoamericana · {gradYear}',
     languages: 'Languages · Spanish (native) | English (C1/C2)',
     jobs: [
-      { title: 'Product Manager, BetterCloud', meta: 'Dec 2023 – Present · Mexico City', bullets: [
+      { title: 'Senior Product Manager, Roc360', meta: 'Oct 2026 – Present · Mexico City (remote)', bullets: [
+        'Lead ISSAC (Insurance, Special Services and Closings) at a fintech that lends to real estate investors. 7 engineers and 3 business stakeholders, building for the internal teams that take a loan from approval to close.',
+        'Brought in to set the product process for a mostly associate and junior PM team. Wrote the plan to get there and am rolling it out.',
+        'Built a pain-point map that cross-references support tickets by category against engineering work in Asana (shipped, in progress, backlog). When tickets keep coming after a fix ships, it flags the problem as still open. Widely used across the team.',
+        'Automating the manual steps in the closing pipeline: date updates, status changes, emails and borrower communications.'
+      ]},
+      { title: 'Product Manager, BetterCloud', meta: 'Dec 2023 – Sep 2026 · Mexico City', bullets: [
         'Overhauled how integrations were built: moved from one-off customer requests to full-coverage platform builds. Researched action needs across the customer base, shipped 10+ automation actions across 30+ integrations, and drove ~15% growth in automation adoption.',
         'Fixed a systemic identity matching bug where users with secondary emails weren’t recognized by workflows. Rearchitected the merge logic and added manual admin controls, resolving one of the most persistent pain points in the support queue.',
         'Replaced generic error messages with specific, admin-readable diagnostics that told customers what went wrong and how to fix it. Reduced workflow-related support tickets by ~35%.',
-        'Building an AI reporting layer for IT teams that lets users query compliance, ROI, and adoption data through natural language. Currently in beta with enterprise customers.',
+        'Built an AI reporting layer for IT teams that lets users query compliance, ROI, and adoption data through natural language, and ran its beta with enterprise customers.',
         'Built a weighted scoring model for roadmap prioritization, replacing a largely gut-feel process. Adopted by multiple PMs across the product org.'
       ]},
       { title: 'Product Manager, LeadGenius', meta: 'Oct 2022 – Sep 2023 · Mexico City · Promoted from Jr. PM', bullets: [
@@ -232,10 +238,10 @@ COPY.en = {
   // Keys must match across languages (the hash is language-independent).
   studies: [
     {
-      key: 'bettercloud', name: 'BetterCloud', url: 'bettercloud.com', dates: 'Dec 2023 – Present',
+      key: 'bettercloud', name: 'BetterCloud', url: 'bettercloud.com', dates: 'Dec 2023 – Sep 2026',
       role: 'Product Manager',
       teaser: 'Took integrations from one-off customer requests to full-coverage builds, and made failed workflows explain what went wrong.',
-      context: 'BetterCloud is a SaaS management platform. IT teams use it to manage users, workflows and data across every app their company pays for. I work on the layer customers automate on top of: user management, workflows and the integrations that connect them.',
+      context: 'BetterCloud is a SaaS management platform. IT teams use it to manage users, workflows and data across every app their company pays for. I worked on the layer customers automate on top of: user management, workflows and the integrations that connect them.',
       outcomes: [
         { value: '~15%', label: 'growth in automation adoption' },
         { value: '−35%', label: 'workflow-related support tickets' },
@@ -254,9 +260,9 @@ COPY.en = {
           'When a workflow skipped an action, customers got a generic error that told them nothing. We rebuilt error reasoning at the action level, so every skip now comes with a diagnostic an admin can read: what happened and how to fix it.',
           'Workflow-related support tickets fell about 35%. Customers started trusting the reports instead of escalating them.'
         ]},
-        { date: 'In beta', title: 'AI Admin Insights', body: [
+        { date: 'Beta', title: 'AI Admin Insights', body: [
           'An AI reporting layer for IT teams. They ask about compliance, ROI and adoption in plain language and get reports they can customize, plus suggestions for which integrations to add.',
-          'It’s in beta with enterprise customers now. The aim is for IT and security leaders to open BetterCloud when they’re making decisions, beyond using it to run workflows.'
+          'I ran the beta with enterprise customers. The aim was for IT and security leaders to open BetterCloud when they were making decisions, beyond using it to run workflows.'
         ]},
         { date: 'Ongoing', title: 'A scoring model to replace gut feel', body: [
           'Backlog decisions were mostly argued, rarely scored. I built a weighted model for roadmap prioritization that puts the tradeoffs in writing.',
@@ -357,7 +363,8 @@ COPY.en = {
   ],
 
   timeline: [
-    { key: 'bettercloud', dates: 'Dec 2023 – Present', employer: 'BetterCloud', role: 'Product Manager', note: 'Integrations and workflow automation for IT teams. Currently running an AI reporting beta with enterprise customers.' },
+    { dates: 'Oct 2026 – Present', employer: 'Roc360', role: 'Senior Product Manager', note: 'Insurance, special services and closings at a real estate lender. Brought in to give a young product team a process, and to automate the closing pipeline.' },
+    { key: 'bettercloud', dates: 'Dec 2023 – Sep 2026', employer: 'BetterCloud', role: 'Product Manager', note: 'Integrations and workflow automation for IT teams. Ran an AI reporting beta with enterprise customers.' },
     { key: 'leadgenius', dates: 'Oct 2022 – Sep 2023', employer: 'LeadGenius', role: 'Jr. Product Manager → Product Manager', note: 'Owned the browser extension that pulls prospect profiles from LinkedIn and CRMs into campaigns. Promoted to PM within the year.' },
     { key: 'sender', dates: 'Dec 2021 – Oct 2022', employer: 'Sender', role: 'Project Manager → Product Manager', note: 'Inherited a white-label parcel platform and gave it a look and a roadmap of its own.' },
     { key: 'selimex', dates: 'Jul 2020 – Oct 2022', employer: 'Selimex', role: 'UI & UX Designer → Project Manager', note: 'Built a self-serve quote tool for a commercial cleaning company. Nobody else in that market in Mexico had one.' },

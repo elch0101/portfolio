@@ -195,11 +195,17 @@ COPY.es = {
     school: 'Universidad Iberoamericana · {gradYear}',
     languages: 'Idiomas · Español (nativo) | Inglés (C1/C2)',
     jobs: [
-      { title: 'Product Manager, BetterCloud', meta: 'dic 2023 – actual · Ciudad de México', bullets: [
+      { title: 'Senior Product Manager, Roc360', meta: 'oct 2026 – actual · Ciudad de México (remoto)', bullets: [
+        'Lidero ISSAC (Insurance, Special Services and Closings) en una fintech que presta a inversionistas inmobiliarios. 7 ingenieros y 3 stakeholders de negocio, construyendo para los equipos internos que llevan un crédito de la aprobación al cierre.',
+        'Me contrataron para poner en orden el proceso de producto de un equipo de PMs mayormente associate y junior. Escribí el plan para lograrlo y ya lo estoy implementando.',
+        'Construí un mapa de puntos de dolor que cruza los tickets de soporte por categoría con el trabajo de ingeniería en Asana (lanzado, en curso, en backlog). Si siguen llegando tickets después de lanzar una solución, marca el problema como abierto. Hoy lo usa buena parte del equipo.',
+        'Automatizo los pasos manuales del proceso de cierre: actualización de fechas, cambios de estatus, correos y comunicación con los acreditados.'
+      ]},
+      { title: 'Product Manager, BetterCloud', meta: 'dic 2023 – sep 2026 · Ciudad de México', bullets: [
         'Replanteé la forma de construir integraciones: de desarrollos a la medida para un cliente a soluciones con cobertura para toda la plataforma. Analicé las necesidades de toda la base de clientes, lancé más de 10 acciones de automatización en más de 30 integraciones y aumenté ~15% la adopción de automatizaciones.',
         'Resolví un problema de fondo en el manejo de identidades: los flujos no reconocían a usuarios con correos secundarios. Rediseñé la lógica para unir perfiles y agregué controles manuales para administradores, con lo que se cerró uno de los problemas más recurrentes en soporte.',
         'Cambié los mensajes de error genéricos por diagnósticos claros que explican qué falló y cómo resolverlo. Los tickets de soporte relacionados con flujos bajaron ~35%.',
-        'Actualmente desarrollo una capa de reportes con IA que permite a los equipos de TI consultar datos de cumplimiento, ROI y adopción en lenguaje natural. En beta con clientes enterprise.',
+        'Desarrollé una capa de reportes con IA que permite a los equipos de TI consultar datos de cumplimiento, ROI y adopción en lenguaje natural, y llevé su beta con clientes enterprise.',
         'Diseñé un modelo de puntuación ponderado para priorizar el roadmap, que reemplazó un proceso basado principalmente en la intuición. Hoy lo usan varios PMs de la organización.'
       ]},
       { title: 'Product Manager, LeadGenius', meta: 'oct 2022 – sep 2023 · Ciudad de México · Promovido desde Jr. PM', bullets: [
@@ -224,10 +230,10 @@ COPY.es = {
 
   studies: [
     {
-      key: 'bettercloud', name: 'BetterCloud', url: 'bettercloud.com', dates: 'dic 2023 – actual',
+      key: 'bettercloud', name: 'BetterCloud', url: 'bettercloud.com', dates: 'dic 2023 – sep 2026',
       role: 'Product Manager',
       teaser: 'Cambié la forma en que se construían las integraciones y logré que los flujos con error expliquen qué pasó y cómo arreglarlo.',
-      context: 'BetterCloud ayuda a los equipos de TI a administrar todas las aplicaciones SaaS de su empresa: usuarios, flujos y datos en un solo lugar. Mi área es la base sobre la que los clientes automatizan su operación: gestión de usuarios, flujos de trabajo y las integraciones que los conectan.',
+      context: 'BetterCloud ayuda a los equipos de TI a administrar todas las aplicaciones SaaS de su empresa: usuarios, flujos y datos en un solo lugar. Mi área era la base sobre la que los clientes automatizan su operación: gestión de usuarios, flujos de trabajo y las integraciones que los conectan.',
       outcomes: [
         { value: '~15%', label: 'más adopción de automatizaciones' },
         { value: '−35%', label: 'de tickets de soporte relacionados con flujos' },
@@ -246,9 +252,9 @@ COPY.es = {
           'Cuando un flujo se saltaba una acción, el cliente veía un error genérico que no le servía de nada. Rehicimos el manejo de errores a nivel de cada acción, y ahora cada caso muestra un diagnóstico claro: qué pasó y cómo solucionarlo.',
           'Los tickets de soporte relacionados con flujos bajaron cerca de 35%. Los clientes empezaron a confiar en los reportes en vez de escalarlos.'
         ]},
-        { date: 'En beta', title: 'AI Admin Insights', body: [
+        { date: 'Beta', title: 'AI Admin Insights', body: [
           'Una capa de reportes con IA para equipos de TI. Pueden preguntar sobre cumplimiento, ROI y adopción como le preguntarían a una persona, y obtienen reportes personalizables y recomendaciones de integraciones.',
-          'Está en beta con clientes enterprise. La meta es que los líderes de TI y seguridad usen BetterCloud para tomar decisiones, además de automatizar su operación.'
+          'Llevé la beta con clientes enterprise. La meta era que los líderes de TI y seguridad usaran BetterCloud para tomar decisiones, además de automatizar su operación.'
         ]},
         { date: 'Continuo', title: 'Priorizar con un modelo y no con intuición', body: [
           'En el backlog se discutía mucho y se medía poco. Diseñé un modelo de puntuación ponderado para priorizar el roadmap, con los pros y contras de cada decisión por escrito.',
@@ -349,7 +355,8 @@ COPY.es = {
   ],
 
   timeline: [
-    { key: 'bettercloud', dates: 'dic 2023 – actual', employer: 'BetterCloud', role: 'Product Manager', note: 'Integraciones y automatización para equipos de TI. Actualmente llevo una beta de reportes con IA con clientes enterprise.' },
+    { dates: 'oct 2026 – actual', employer: 'Roc360', role: 'Senior Product Manager', note: 'Seguros, servicios especiales y cierres en una fintech de crédito inmobiliario. Llegué a darle proceso a un equipo de producto joven y a automatizar el cierre.' },
+    { key: 'bettercloud', dates: 'dic 2023 – sep 2026', employer: 'BetterCloud', role: 'Product Manager', note: 'Integraciones y automatización para equipos de TI. Llevé una beta de reportes con IA con clientes enterprise.' },
     { key: 'leadgenius', dates: 'oct 2022 – sep 2023', employer: 'LeadGenius', role: 'Jr. Product Manager → Product Manager', note: 'A cargo de la extensión que lleva perfiles de LinkedIn y CRMs a las campañas. Me promovieron a PM antes de cumplir el año.' },
     { key: 'sender', dates: 'dic 2021 – oct 2022', employer: 'Sender', role: 'Project Manager → Product Manager', note: 'Recibí una plataforma de paquetería de marca blanca y le di identidad y roadmap propios.' },
     { key: 'selimex', dates: 'jul 2020 – oct 2022', employer: 'Selimex', role: 'UI & UX Designer → Project Manager', note: 'Cotizador en línea para una empresa de limpieza comercial. Fue el primero en su mercado en México.' },
