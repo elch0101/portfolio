@@ -71,7 +71,7 @@ COPY.en = {
   work: {
     h2: 'Selected work',
     meta: '{productCountWordCap} products · {careerStartYear} → now',
-    lede: 'IT automation, sales data, parcel logistics, commercial cleaning and groceries. Each one had a manual step that everyone had stopped noticing. That\'s usually where I start.',
+    lede: 'Real estate lending, IT automation, sales data, parcel logistics, commercial cleaning and groceries. Each one had a manual step that everyone had stopped noticing. That\'s usually where I start.',
     more: 'Read the story →',
     fillerKicker: 'Hiring?',
     fillerTitle: 'The {nextProductOrdinal} one is still open.',
@@ -238,6 +238,35 @@ COPY.en = {
   // Keys must match across languages (the hash is language-independent).
   studies: [
     {
+      key: 'roc360', name: 'Roc360', url: 'roc360.com', dates: 'Oct 2026 – Present',
+      role: 'Senior Product Manager',
+      teaser: 'Joined a real estate lender with no product docs. Built a pain-point map from the support queue and started automating the closing pipeline.',
+      context: 'Roc360 is a fintech that lends to real estate investors so they can grow their business. I lead ISSAC (Insurance, Special Services and Closings), with 7 engineers and 3 business stakeholders. Most of what we build is for the internal teams that take a loan from approval to close.',
+      outcomes: [
+        { value: '3 areas', label: 'insurance, special services and closings' },
+        { value: '7 + 3', label: 'engineers and business stakeholders' },
+        { value: 'Month 1', label: 'pain-point map in use across the team' }
+      ],
+      chapters: [
+        { date: 'Oct 2026', title: 'Onboarding without a map', body: [
+          'There was no product documentation, internal or external. Learning how a loan gets from approval to close meant asking around, reading tickets and tracing the backlog myself.',
+          'I used Claude to read through the tech backlog and piece the products together. That work turned into the next chapter.'
+        ]},
+        { date: 'Oct 2026', title: 'A pain-point map from the support queue', body: [
+          'I built a tool that groups support tickets by category and cross-references them against engineering work in Asana: shipped, in progress or still in the backlog.',
+          'If a fix ships and the tickets keep coming, it flags the pain point as still open. Shipping isn’t the finish line; a quiet queue is. It’s now widely used across the team.'
+        ]},
+        { date: 'Now', title: 'A process for a young team', body: [
+          'Most of the product team is associate or junior level, and the process showed it. I was brought in to fix that and to guide the team.',
+          'The plan is written. We’re starting to point the ship in the right direction.'
+        ]},
+        { date: 'Next', title: 'Automating the closing pipeline', body: [
+          'Closings run on manual steps: date updates, status changes, emails and borrower communications, each one moved by hand.',
+          'That’s the first place I’m automating.'
+        ]}
+      ]
+    },
+    {
       key: 'bettercloud', name: 'BetterCloud', url: 'bettercloud.com', dates: 'Dec 2023 – Sep 2026',
       role: 'Product Manager',
       teaser: 'Took integrations from one-off customer requests to full-coverage builds, and made failed workflows explain what went wrong.',
@@ -363,7 +392,7 @@ COPY.en = {
   ],
 
   timeline: [
-    { dates: 'Oct 2026 – Present', employer: 'Roc360', role: 'Senior Product Manager', note: 'Insurance, special services and closings at a real estate lender. Brought in to give a young product team a process, and to automate the closing pipeline.' },
+    { key: 'roc360', dates: 'Oct 2026 – Present', employer: 'Roc360', role: 'Senior Product Manager', note: 'Insurance, special services and closings at a real estate lender. Brought in to give a young product team a process, and to automate the closing pipeline.' },
     { key: 'bettercloud', dates: 'Dec 2023 – Sep 2026', employer: 'BetterCloud', role: 'Product Manager', note: 'Integrations and workflow automation for IT teams. Ran an AI reporting beta with enterprise customers.' },
     { key: 'leadgenius', dates: 'Oct 2022 – Sep 2023', employer: 'LeadGenius', role: 'Jr. Product Manager → Product Manager', note: 'Owned the browser extension that pulls prospect profiles from LinkedIn and CRMs into campaigns. Promoted to PM within the year.' },
     { key: 'sender', dates: 'Dec 2021 – Oct 2022', employer: 'Sender', role: 'Project Manager → Product Manager', note: 'Inherited a white-label parcel platform and gave it a look and a roadmap of its own.' },
