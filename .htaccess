@@ -1,0 +1,15 @@
+RewriteEngine on
+
+# Old multi-page URLs → new hash routes (keeps inbound links alive)
+RewriteRule ^about_me/?$        /#about        [R=301,L,NE]
+RewriteRule ^bettercloud/?$     /#bettercloud  [R=301,L,NE]
+RewriteRule ^leadgenius/?$      /#leadgenius   [R=301,L,NE]
+RewriteRule ^sender/?$          /#sender       [R=301,L,NE]
+RewriteRule ^selimex/?$         /#selimex      [R=301,L,NE]
+RewriteRule ^la_fruteria/?$     /#la_fruteria  [R=301,L,NE]
+RewriteRule ^PDF/Elias\ Cohen\ Resume\.pdf$ /assets/Elias-Cohen-Resume.pdf [R=301,L,NE]
+
+# Anything else that isn't a real file → the app (it shows the 404 screen)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]
