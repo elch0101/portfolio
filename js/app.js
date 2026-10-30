@@ -574,6 +574,13 @@
     return h || 'home';
   }
 
+  // Each history entry remembers its own scroll, so Back/Forward land where you left.
+  // pos[] is written on every scroll (a debounced history write misses a quick Back);
+  // history.state carries key + y so a reload keeps the place too.
+  const pos = {};
+  let entryKey = '';
+  function saveScroll() { history.replaceState({ key: entryKey, y: window.scrollY }, ''); }
+
   function go(page) {
     closeMenu();
     if (page === 'work') { scrollToWork(); return; }
@@ -602,8 +609,12 @@
   function route() {
     const page = pageFromHash();
     state.page = page;
+    const st = history.state || {};
+    entryKey = st.key || Math.random().toString(36).slice(2);
+    const y = pos[entryKey] != null ? pos[entryKey] : st.y || 0;
     render(page);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: y, behavior: 'instant' });
+    saveScroll();
   }
 
   function render(page) {
@@ -809,9 +820,12 @@
   }
 
   /* scroll: progress bar + orbit parallax + nav */
+  let saveT = 0;
   function onScroll() {
     const y = window.scrollY || 0;
     updateNav(y);
+    pos[entryKey] = y;
+    clearTimeout(saveT); saveT = setTimeout(saveScroll, 150);
     const doc = document.documentElement;
     const max = Math.max(1, doc.scrollHeight - window.innerHeight);
     const bar = $('[data-progress]');
@@ -873,6 +887,7 @@
       clearTimeout(resizeT);
       resizeT = setTimeout(() => { fitFiller(); alignStripes(); if (window.innerWidth > 1080) closeMenu(); }, 80);
     });
+    history.scrollRestoration = 'manual';
     window.addEventListener('hashchange', route);
     if (reduced.addEventListener) reduced.addEventListener('change', () => render(state.page));
 
