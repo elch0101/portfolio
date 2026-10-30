@@ -585,7 +585,8 @@ h1, h2, h3, p { margin: 0; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
   .resume { padding: 0 !important; }
-  .rsection { break-inside: avoid; }
+  /* (+) sections may split across pages (Experience is taller than a page, and
+     keeping it whole pushed it off page 1); single jobs stay whole */
   .rjob { break-inside: avoid; }
   @page { margin: 14mm; }
 }
