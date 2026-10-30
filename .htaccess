@@ -1,5 +1,8 @@
 RewriteEngine on
 
+# Repo notes are public on GitHub but not served on the site
+RewriteRule ^CLAUDE\.md$ - [R=404,L]
+
 # Old multi-page URLs → new hash routes (keeps inbound links alive)
 RewriteRule ^about_me/?$        /#about        [R=301,L,NE]
 RewriteRule ^bettercloud/?$     /#bettercloud  [R=301,L,NE]
@@ -13,3 +16,9 @@ RewriteRule ^PDF/Elias\ Cohen\ Resume\.pdf$ /assets/Elias-Cohen-Resume.pdf [R=30
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /index.html [L]
+
+# JS/CSS change on every deploy and carry no version in their names:
+# revalidate each load (cheap 304 via ETag) so the CDN never serves stale code
+<FilesMatch "\.(js|css)$">
+  Header set Cache-Control "no-cache"
+</FilesMatch>
