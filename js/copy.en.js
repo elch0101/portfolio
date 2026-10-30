@@ -186,8 +186,8 @@ COPY.en = {
   resume: {
     barLabel: 'Résumé · print or save as PDF',
     print: 'Print / save PDF',
-    outroTitle: ['Want a copy ', 'for later?', ''],
-    outroSub: 'Easy to print, save, or pass along to your team',
+    outroTitle: ['Skip the ', 'copy-paste.', ''],
+    outroSub: 'One click and it\'s yours to print or share',
     title: 'Senior Product Manager',
     linkedin: 'LinkedIn',
     city: 'Mexico City, Mex',

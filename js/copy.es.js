@@ -180,8 +180,8 @@ COPY.es = {
   resume: {
     barLabel: 'CV · imprímelo o guárdalo en PDF',
     print: 'Imprimir / Guardar PDF',
-    outroTitle: ['¿Quieres una copia ', 'para después?', ''],
-    outroSub: 'Fácil de imprimir, guardar o compartir con tu equipo',
+    outroTitle: ['Olvídate de ', 'copiar y pegar.', ''],
+    outroSub: 'Un clic y es tuyo para imprimir o compartir',
     title: 'Senior Product Manager',
     linkedin: 'LinkedIn',
     city: 'Ciudad de México',
