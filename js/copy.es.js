@@ -197,7 +197,7 @@ COPY.es = {
     jobs: [
       { title: 'Senior Product Manager, Roc360', meta: 'oct 2026 – actual · Ciudad de México (remoto)', bullets: [
         'Lidero ISSAC (Insurance, Special Services and Closings) en una fintech que presta a inversionistas inmobiliarios. 7 ingenieros y 3 stakeholders de negocio, construyendo para los equipos internos que llevan un crédito de la aprobación al cierre.',
-        'Me contrataron para poner en orden el proceso de producto de un equipo de PMs mayormente associate y junior. Escribí el plan para lograrlo y ya lo estoy implementando.',
+        'Ayudo a definir un proceso de producto compartido para un equipo de PMs en crecimiento y acompaño a los PMs del equipo. Escribí el plan y lo estoy implementando con el equipo.',
         'Construí un mapa de puntos de dolor que cruza los tickets de soporte por categoría con el trabajo de ingeniería en Asana (lanzado, en curso, en backlog). Si siguen llegando tickets después de lanzar una solución, marca el problema como abierto. Hoy lo usa buena parte del equipo.',
         'Automatizo los pasos manuales del proceso de cierre: actualización de fechas, cambios de estatus, correos y comunicación con los acreditados.'
       ]},
@@ -232,7 +232,7 @@ COPY.es = {
     {
       key: 'roc360', name: 'Roc360', url: 'roc360.com', dates: 'oct 2026 – actual',
       role: 'Senior Product Manager',
-      teaser: 'Llegué a una fintech de crédito inmobiliario sin documentación de producto. Armé un mapa de puntos de dolor a partir de soporte y empecé a automatizar el cierre.',
+      teaser: 'Llegué a una fintech de crédito inmobiliario, aprendí el ciclo del crédito desde soporte y empecé a automatizar el cierre.',
       context: 'Roc360 es una fintech que presta a inversionistas inmobiliarios para que hagan crecer su negocio. Lidero ISSAC (Insurance, Special Services and Closings), con 7 ingenieros y 3 stakeholders de negocio. Casi todo lo que construimos es para los equipos internos que llevan un crédito de la aprobación al cierre.',
       outcomes: [
         { value: '3 áreas', label: 'seguros, servicios especiales y cierres' },
@@ -240,17 +240,17 @@ COPY.es = {
         { value: 'Mes 1', label: 'mapa de puntos de dolor en uso en todo el equipo' }
       ],
       chapters: [
-        { date: 'oct 2026', title: 'Onboarding sin mapa', body: [
-          'No había documentación de producto, ni interna ni externa. Para entender cómo pasa un crédito de la aprobación al cierre tuve que preguntar, leer tickets y recorrer el backlog por mi cuenta.',
-          'Usé Claude para leer el backlog técnico y armar el rompecabezas de los productos. De ahí salió el siguiente capítulo.'
+        { date: 'oct 2026', title: 'Conocer el producto', body: [
+          'Mucho de cómo funcionaba el producto vivía en la experiencia del equipo y en el backlog. Aprendí cómo pasa un crédito de la aprobación al cierre platicando con la gente, leyendo tickets de soporte y recorriendo el backlog.',
+          'Me apoyé en IA para analizar el backlog técnico y entender cómo encajan los productos. De ahí salió el siguiente capítulo.'
         ]},
         { date: 'oct 2026', title: 'Un mapa de dolores desde soporte', body: [
           'Construí una herramienta que agrupa los tickets de soporte por categoría y los cruza con el trabajo de ingeniería en Asana: lanzado, en curso o todavía en backlog.',
           'Si una solución sale y los tickets siguen llegando, marca el problema como abierto. Lanzar no es la meta; la meta es que soporte deje de recibir ese ticket. Hoy lo usa buena parte del equipo.'
         ]},
-        { date: 'Ahora', title: 'Proceso para un equipo joven', body: [
-          'La mayoría del equipo de producto es associate o junior, y el proceso lo reflejaba. Me contrataron para ordenarlo y guiar al equipo.',
-          'El plan ya está escrito. Estamos empezando a enderezar el rumbo.'
+        { date: 'Ahora', title: 'Un proceso compartido', body: [
+          'El equipo de producto está creciendo. Parte de mi rol es ayudar a definir un proceso compartido y acompañar a los demás PMs en el camino.',
+          'El plan ya está escrito y lo estamos implementando juntos.'
         ]},
         { date: 'Siguiente', title: 'Automatizar el cierre', body: [
           'Los cierres dependen de pasos manuales: actualizar fechas, cambiar estatus, mandar correos y comunicarse con los acreditados, todo a mano.',
@@ -384,7 +384,7 @@ COPY.es = {
   ],
 
   timeline: [
-    { key: 'roc360', dates: 'oct 2026 – actual', employer: 'Roc360', role: 'Senior Product Manager', note: 'Seguros, servicios especiales y cierres en una fintech de crédito inmobiliario. Llegué a darle proceso a un equipo de producto joven y a automatizar el cierre.' },
+    { key: 'roc360', dates: 'oct 2026 – actual', employer: 'Roc360', role: 'Senior Product Manager', note: 'Seguros, servicios especiales y cierres en una fintech de crédito inmobiliario. Ayudo a definir el proceso de producto del equipo y a automatizar el cierre.' },
     { key: 'bettercloud', dates: 'dic 2023 – sep 2026', employer: 'BetterCloud', role: 'Product Manager', note: 'Integraciones y automatización para equipos de TI. Llevé una beta de reportes con IA con clientes enterprise.' },
     { key: 'leadgenius', dates: 'oct 2022 – sep 2023', employer: 'LeadGenius', role: 'Jr. Product Manager → Product Manager', note: 'A cargo de la extensión que lleva perfiles de LinkedIn y CRMs a las campañas. Me promovieron a PM antes de cumplir el año.' },
     { key: 'sender', dates: 'dic 2021 – oct 2022', employer: 'Sender', role: 'Project Manager → Product Manager', note: 'Recibí una plataforma de paquetería de marca blanca y le di identidad y roadmap propios.' },
