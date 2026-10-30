@@ -12,10 +12,13 @@ RewriteRule ^selimex/?$         /#selimex      [R=301,L,NE]
 RewriteRule ^la_fruteria/?$     /#la_fruteria  [R=301,L,NE]
 RewriteRule ^PDF/Elias\ Cohen\ Resume\.pdf$ /assets/Elias-Cohen-Resume.pdf [R=301,L,NE]
 
-# Anything else that isn't a real file → the app (it shows the 404 screen)
+# Anything else that isn't a real file → back to the root. The router only reads the
+# hash, so serving the app at /whatever would make every path look valid. The browser
+# keeps the #fragment across the redirect: /resum#about → /#about. 302, not 301,
+# so browsers don't pin it if a real path is added later.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /index.html [L]
+RewriteRule ^ / [R=302,L]
 
 # JS/CSS change on every deploy and carry no version in their names:
 # revalidate each load (cheap 304 via ETag) so the CDN never serves stale code

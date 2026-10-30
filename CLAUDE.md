@@ -26,7 +26,7 @@ js/blobatar-hero.js  ES module: mounts the hero blobatar from CONFIG.blobatar (g
 js/blobatar-favicon.js  ES module: draws the same blobatar on a canvas and animates the tab icon
 vendor/blobatar/  blobatar 2.7.0 dist (internal.js, expression.js, motion.css). Verbatim; re-copy to upgrade
 assets/           favicon.svg (static blobatar) + favicon.png (192px raster), Elias-Cohen-Resume.pdf
-.htaccess         Apache: old URLs → new hash routes, unknown paths → index.html
+.htaccess         Apache: old URLs → new hash routes, unknown paths → 302 to /
 ```
 
 ## Languages
