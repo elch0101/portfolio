@@ -75,7 +75,7 @@ via `numWord`/`ordinalWord` (0–15; falls back to digits beyond that).
 Adding a case study = push one object to `studies` in every copy file. The home
 grid, the "next" links, the counts, and the route all follow. Keep `key`
 URL-safe (it is the hash) and identical across languages, and add its logo as
-`assets/logos/<key>.svg` (card + case hero read it by key).
+`assets/logos/<key>.svg` (card, case hero and experience timeline read it by key).
 
 ## CONFIG (data.js)
 

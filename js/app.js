@@ -201,6 +201,7 @@
               <div class="tmark"><div class="tring"></div><div class="tdot"></div></div>
             </div>
             <div class="tbody">
+              ${tl.key ? `<img class="logo logo--tl" src="assets/logos/${esc(tl.key)}.svg" alt="">` : ''}
               <div class="temployer">${esc(tl.employer)}</div>
               <div class="trole">${esc(tl.role)}</div>
               <div class="tnote">${esc(tl.note)}</div>
