@@ -261,7 +261,7 @@
         <div class="contact-links" data-reveal>
           <a href="mailto:${esc(CONFIG.email)}">${esc(CONFIG.email)}</a>
           <a href="${esc(CONFIG.linkedin)}" target="_blank" rel="noopener">${esc(c.contact.linkedin)}</a>
-          <span>${esc(CONFIG.phone)}</span>
+          <a href="https://wa.me/${CONFIG.phone.replace(/\D/g, '')}" target="_blank" rel="noopener">${esc(CONFIG.phone)}</a>
           <span>${esc(c.contact.city)}</span>
         </div>
       </div>
