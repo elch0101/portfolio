@@ -491,7 +491,7 @@
           </div>
           <div class="rcontact">
             <a href="mailto:${esc(CONFIG.email)}">${esc(CONFIG.email)}</a>
-            <span>${esc(CONFIG.phone)}</span>
+            <a href="https://wa.me/${CONFIG.phone.replace(/\D/g, '')}" target="_blank" rel="noopener">${esc(CONFIG.phone)}</a>
             <a href="${esc(CONFIG.linkedin)}" target="_blank" rel="noopener">${esc(c.linkedin)}</a>
             <span>${esc(c.city)}</span>
             <span>${esc(CONFIG.domain)}</span>
