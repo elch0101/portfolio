@@ -237,6 +237,8 @@ h1, h2, h3, p { margin: 0; }
 .card { cursor: pointer; background: var(--ink); padding: 40px 34px; display: flex; flex-direction: column; gap: 20px; min-height: 300px; transition: background .35s ease; color: var(--paper); text-align: left; border: 0; font: inherit; }
 .card:hover, .card:focus-visible { background: var(--ink-hover); }
 .card-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper-50); }
+.logo { width: auto; align-self: flex-start; opacity: 0.55; }
+.logo--card { height: 22px; }
 .card-name { font-size: clamp(26px, 4.8vw, 34px); font-weight: 900; letter-spacing: -0.035em; line-height: 1; }
 .card-role { font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em; color: var(--red); }
 .card-teaser { font-size: 16px; line-height: 1.6; color: var(--paper-72); flex: 1; }
@@ -376,6 +378,7 @@ h1, h2, h3, p { margin: 0; }
 .case-back:hover { color: var(--paper); }
 .case-next { display: flex; align-items: center; gap: 10px; color: var(--paper); cursor: pointer; background: none; border: 0; padding: 0; font: inherit; letter-spacing: inherit; text-transform: inherit; }
 .case-next-label { color: var(--paper-50); }
+.logo--case { height: 28px; }
 .case-h1 { font-size: clamp(44px, 6.5vw, 96px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.88; }
 .case-meta { display: flex; gap: 22px; flex-wrap: wrap; font-family: var(--mono); font-size: 14px; letter-spacing: 0.08em; color: var(--paper-72); }
 .case-context { max-width: 600px; font-size: 19px; line-height: 1.7; color: var(--paper-80); }

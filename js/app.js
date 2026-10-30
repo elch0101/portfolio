@@ -169,6 +169,7 @@
           ${c.studies.map((s) => `
           <a class="card" href="#${esc(s.key)}" data-card data-reveal>
             <div class="card-top"><span>${esc(s.dates)}</span>${ring34(false)}</div>
+            <img class="logo logo--card" src="assets/logos/${esc(s.key)}.svg" alt="">
             <div class="card-name">${esc(s.name)}</div>
             <div class="card-role">${esc(s.role)}</div>
             <div class="card-teaser">${esc(s.teaser)}</div>
@@ -332,6 +333,7 @@
             </button>
           </div>
           <div class="eyebrow eyebrow--fit">${esc(study.dates)}</div>
+          <img class="logo logo--case" src="assets/logos/${esc(study.key)}.svg" alt="">
           <h1 class="case-h1" id="case-title">${esc(study.name)}</h1>
           <div class="case-meta"><span class="accent">${esc(study.role)}</span><span>${esc(study.url)}</span></div>
           <p class="case-context">${esc(study.context)}</p>

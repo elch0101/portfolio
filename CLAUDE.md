@@ -25,7 +25,7 @@ js/app.js         hash router, page templates, language picker, interaction laye
 js/blobatar-hero.js  ES module: mounts the hero blobatar from CONFIG.blobatar (gaze + click bursts)
 js/blobatar-favicon.js  ES module: draws the same blobatar on a canvas and animates the tab icon
 vendor/blobatar/  blobatar 2.7.0 dist (internal.js, expression.js, motion.css). Verbatim; re-copy to upgrade
-assets/           favicon.svg (static blobatar) + favicon.png (192px raster), Elias-Cohen-Resume.pdf
+assets/           logos/<study key>.svg (from the design's logos/), favicon.svg (static blobatar) + favicon.png (192px raster), Elias-Cohen-Resume.pdf
 .htaccess         Apache: old URLs → new hash routes, unknown paths → 302 to /
 ```
 
@@ -74,7 +74,8 @@ via `numWord`/`ordinalWord` (0–15; falls back to digits beyond that).
 
 Adding a case study = push one object to `studies` in every copy file. The home
 grid, the "next" links, the counts, and the route all follow. Keep `key`
-URL-safe (it is the hash) and identical across languages.
+URL-safe (it is the hash) and identical across languages, and add its logo as
+`assets/logos/<key>.svg` (card + case hero read it by key).
 
 ## CONFIG (data.js)
 
